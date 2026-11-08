@@ -694,17 +694,100 @@ body::before {
   transform: translate(2px, -2px);
 }
 
-/* Sponsor & BMC Card Accent Hovers */
-.link-card-sponsor:hover .link-card-icon {
-  color: #f43f5e;
-  border-color: rgba(244, 63, 94, 0.4);
-  background: rgba(244, 63, 94, 0.12);
+/* --------------------------------------------------------------------------
+   Compact Support & Sponsorship Block
+   -------------------------------------------------------------------------- */
+.support-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 13px 18px;
+  margin-top: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.link-card-bmc:hover .link-card-icon {
+.support-card-text {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.support-card-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.support-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.support-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.support-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.support-btn-github {
+  color: #f43f5e;
+  background: rgba(244, 63, 94, 0.08);
+  border-color: rgba(244, 63, 94, 0.25);
+}
+
+.support-btn-github:hover {
+  background: rgba(244, 63, 94, 0.16);
+  border-color: rgba(244, 63, 94, 0.45);
+  transform: translateY(-1px);
+}
+
+.support-btn-bmc {
   color: #f59e0b;
-  border-color: rgba(245, 158, 11, 0.4);
-  background: rgba(245, 158, 11, 0.12);
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.support-btn-bmc:hover {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: rgba(245, 158, 11, 0.45);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 580px) {
+  .support-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 14px;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .support-card-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 
 /* Email Card with 1-click Copy Action */

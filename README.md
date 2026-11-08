@@ -11,6 +11,6 @@ Personal website of **Gaurang Pansare** — Backend Software Engineer (Java &bul
 - **Dual Themes:** Sleek dark mode by default with light mode toggle, saved locally and honoring system preferences.
 - **Fast Performance:** Preconnected typography, vector SVG favicon, inline optimized brand icons, zero layout shift.
 - **Balanced Tech Stack:** Equal prominence to Java/Spring Boot (current stack) and Node.js (deep tenure), covering microservices, distributed architectures, and scalable APIs.
-- **Comprehensive Profiles:** Balanced grid featuring LinkedIn, GitHub, LeetCode, Stack Overflow, Still Debugging blog, Dev.to, GitHub Sponsors, Buy Me a Coffee, Email (with 1-click copy), and X (Twitter).
+- **Comprehensive Profiles & Support:** Clean 2x4 grid for core channels (LinkedIn, GitHub, LeetCode, Stack Overflow, Still Debugging blog, Dev.to, Email with 1-click copy, and X) paired with a subtle, dedicated support block for GitHub Sponsors and Buy Me a Coffee.
 - **Mobile-First Layout:** Compact margins, zero dead space, and seamless responsive design across all devices.
 - **Accessible & SEO-Optimized:** Semantic landmarks, Schema.org JSON-LD, Open Graph, Twitter Cards, and high-contrast styling.
