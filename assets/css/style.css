@@ -694,6 +694,19 @@ body::before {
   transform: translate(2px, -2px);
 }
 
+/* Sponsor & BMC Card Accent Hovers */
+.link-card-sponsor:hover .link-card-icon {
+  color: #f43f5e;
+  border-color: rgba(244, 63, 94, 0.4);
+  background: rgba(244, 63, 94, 0.12);
+}
+
+.link-card-bmc:hover .link-card-icon {
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.12);
+}
+
 /* Email Card with 1-click Copy Action */
 .link-card-email {
   position: relative;
