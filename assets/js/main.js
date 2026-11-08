@@ -65,24 +65,28 @@
   }
 
   // --- Copy Email to Clipboard ---
-  const copyBtn = document.getElementById('copy-email-btn');
+  const emailCard = document.getElementById('email-link-card');
   const emailAddress = 'contact@gaurang.page';
 
-  if (copyBtn) {
-    copyBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(emailAddress).then(
-          function () {
-            showToast('Email copied: contact@gaurang.page');
-          },
-          function () {
-            fallbackCopy(emailAddress);
-          }
-        );
-      } else {
-        fallbackCopy(emailAddress);
-      }
+  function copyEmailAction() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(emailAddress).then(
+        function () {
+          showToast('Email copied: contact@gaurang.page');
+        },
+        function () {
+          fallbackCopy(emailAddress);
+        }
+      );
+    } else {
+      fallbackCopy(emailAddress);
+    }
+  }
+
+  if (emailCard) {
+    emailCard.addEventListener('click', function (e) {
+      // Copy email to clipboard on click
+      copyEmailAction();
     });
   }
 
@@ -97,7 +101,7 @@
       document.execCommand('copy');
       showToast('Email copied: contact@gaurang.page');
     } catch (err) {
-      window.location.href = `mailto:${text}`;
+      // Fallback
     }
     document.body.removeChild(tempInput);
   }

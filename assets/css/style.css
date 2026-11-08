@@ -607,7 +607,7 @@ body::before {
   margin-bottom: 0;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 580px) and (orientation: portrait) {
   .links-grid {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -683,6 +683,9 @@ body::before {
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .link-card-detail {
@@ -788,57 +791,36 @@ body::before {
   transform: translateY(-1px);
 }
 
-@media (max-width: 580px) {
+/* Portrait mobile support card: stack cleanly with equal-width buttons */
+@media (max-width: 580px) and (orientation: portrait) {
   .support-card {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 14px;
+    align-items: stretch;
+    padding: 13px 14px;
     gap: 10px;
     margin-top: 12px;
   }
+  .support-card-text {
+    justify-content: center;
+    font-size: 0.84rem;
+    text-align: center;
+  }
   .support-card-actions {
     width: 100%;
-    justify-content: flex-start;
+    display: flex;
+    gap: 8px;
+  }
+  .support-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 7px 10px;
+    font-size: 0.78rem;
   }
 }
 
-/* Email Card with 1-click Copy Action */
+/* Email Card: unified styling matching developer profile cards */
 .link-card-email {
-  position: relative;
-}
-
-.link-card-email .link-card-left {
-  flex: 1;
-}
-
-.link-copy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--bg-pill);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 6px 11px;
-  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all var(--transition-fast);
-  margin-left: 8px;
-  flex-shrink: 0;
-}
-
-.link-copy-btn:hover {
-  color: var(--text-primary);
-  border-color: var(--border-hover);
-  background: var(--bg-pill-hover);
-  transform: translateY(-1px);
-}
-
-.link-copy-btn svg {
-  width: 13px;
-  height: 13px;
-  fill: currentColor;
 }
 
 /* --------------------------------------------------------------------------
@@ -1036,45 +1018,50 @@ body::before {
 
   /* Compact Section Blocks & Cards */
   .section-block {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .section-card {
-    padding: 14px 18px;
+    padding: 12px 16px;
   }
   .section-heading {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 8px;
+    gap: 8px;
   }
   .section-heading-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
   .bio-text {
-    font-size: 0.86rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.45;
   }
   .bio-text p + p {
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .skills-list {
     gap: 6px;
-    margin-top: 10px;
+    margin-top: 8px;
   }
   .skill-pill {
     padding: 3px 9px;
     font-size: 0.75rem;
   }
 
-  /* Compact Links Grid */
+  /* Compact Links Grid: strictly 2 balanced columns in landscape */
   .links-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 8px;
+    margin-bottom: 0;
   }
   .link-card {
-    padding: 9px 12px;
+    padding: 8px 12px;
+    min-height: 44px;
   }
   .link-card-left {
     gap: 10px;
+    min-width: 0;
   }
   .link-card-icon {
     width: 28px;
@@ -1084,30 +1071,60 @@ body::before {
     width: 14px;
     height: 14px;
   }
+  .link-card-info {
+    min-width: 0;
+  }
   .link-card-name {
     font-size: 0.84rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .link-card-detail {
     font-size: 0.72rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  .link-copy-btn {
-    padding: 4px 8px;
-    font-size: 0.7rem;
+  .link-card-arrow {
+    margin-left: 6px;
+  }
+  .link-card-arrow svg {
+    width: 13px;
+    height: 13px;
   }
 
-  /* Compact Support Card */
+  /* Compact Support Card: single-line horizontal bar in landscape */
   .support-card {
-    padding: 10px 14px;
-    margin-top: 10px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    padding: 8px 14px;
+    margin-top: 8px;
     gap: 8px;
   }
   .support-card-text {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     gap: 6px;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .support-card-icon {
+    font-size: 0.9rem;
+  }
+  .support-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
   }
   .support-btn {
     padding: 4px 10px;
-    font-size: 0.74rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    gap: 5px;
   }
   .support-btn svg {
     width: 12px;
@@ -1116,9 +1133,17 @@ body::before {
 
   /* Compact Footer */
   .site-footer {
-    padding-top: 12px;
+    padding-top: 10px;
     margin-top: 4px;
-    font-size: 0.76rem;
+    font-size: 0.74rem;
+    line-height: 1.4;
+  }
+  .site-footer p + p {
+    margin-top: 2px;
+  }
+  .footer-domain-badge {
+    font-size: 0.7rem;
+    padding: 1px 6px;
   }
 
   .toast-container {
