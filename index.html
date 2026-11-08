@@ -1,70 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145108193-1"></script>
-    <script src="https://kit.fontawesome.com/13fad81f3e.js" crossorigin="anonymous"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        gtag('config', 'UA-145108193-1');
+  <!-- Primary Meta Tags -->
+  <title>Gaurang Pansare — Backend Software Engineer (Java &amp; Node.js)</title>
+  <meta name="title" content="Gaurang Pansare — Backend Software Engineer (Java &amp; Node.js)">
+  <meta name="author" content="Gaurang Pansare">
+  <meta name="description" content="Personal website of Gaurang Pansare, a backend software engineer specializing in Java, Spring Boot, and Node.js. Building scalable microservices, high-throughput APIs, and distributed systems.">
+  <meta name="keywords" content="Gaurang Pansare, Backend Developer, Software Engineer, Java, Spring Boot, Node.js, JavaScript, TypeScript, Microservices, Distributed Systems, Hibernate, JPA, REST APIs, Still Debugging, blog.gaurang.page, gaurang.page, contact@gaurang.page">
+  <meta name="theme-color" content="#0a0e17" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
 
-        var getOutboundLink = function (url, label) {
-            if(ga){
-                gtag('event', 'click', {
-                    'event_category': 'outbound',
-                    'event_label': label,
-                    'transport_type': 'beacon'
-                });
-            }
-            document.location = url;
-        }
-    </script>
+  <link rel="canonical" href="https://www.gaurang.page/">
 
-    <title>Gaurang Pansare</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Gaurang Pansare">
-    <meta name="description" content="Gaurang Pansare - Personal website">
-    <meta name="keywords" content="Back-End, Developer, Node, JavaScript, Gaurang, Pansare">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="canonical" href="https://www.gaurang.page" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Preconnect to Google Fonts for Fast Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.gaurang.page/">
+  <meta property="og:site_name" content="Gaurang Pansare">
+  <meta property="og:title" content="Gaurang Pansare — Backend Software Engineer (Java &amp; Node.js)">
+  <meta property="og:description" content="Personal website of Gaurang Pansare. Backend engineer specializing in Java / Spring Boot and Node.js microservices, APIs, and distributed systems.">
+  <meta property="og:image" content="https://www.gaurang.page/assets/img/avatar.jpg">
+
+  <!-- Twitter / X Cards -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://www.gaurang.page/">
+  <meta property="twitter:title" content="Gaurang Pansare — Backend Software Engineer (Java &amp; Node.js)">
+  <meta property="twitter:description" content="Personal website of Gaurang Pansare. Backend engineer specializing in Java / Spring Boot and Node.js microservices, APIs, and distributed systems.">
+  <meta property="twitter:image" content="https://www.gaurang.page/assets/img/avatar.jpg">
+  <meta name="twitter:creator" content="@gaurang847">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gaurang Pansare",
+    "url": "https://www.gaurang.page",
+    "image": "https://www.gaurang.page/assets/img/avatar.jpg",
+    "email": "mailto:contact@gaurang.page",
+    "jobTitle": "Backend Software Engineer",
+    "knowsAbout": [
+      "Java",
+      "Spring Boot",
+      "Node.js",
+      "JavaScript",
+      "TypeScript",
+      "Spring Cloud",
+      "Microservices",
+      "Hibernate / JPA",
+      "REST APIs",
+      "Distributed Systems",
+      "System Design",
+      "SQL",
+      "NoSQL"
+    ],
+    "sameAs": [
+      "https://github.com/gaurang847",
+      "https://www.linkedin.com/in/gaurangpansare/",
+      "https://blog.gaurang.page",
+      "https://leetcode.com/u/gaurang847",
+      "https://stackoverflow.com/users/5968979/gaurang847",
+      "https://dev.to/gaurang847",
+      "https://twitter.com/gaurang847"
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145108193-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-145108193-1');
+  </script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div>
-        <div id="photo-holder" role="img" alt="Profile photo" aria-label="Profile photo"></div>
-        <h2>Hi! This is Gaurang!</h2>
-        <h3>Node.js / JavaScript Developer | Back-end Developer</h3>
-        <!-- Personal links -->
-        <div id="personal-links">
-            <a class="fab fa-github" aria-label="Github"
-                onclick="getOutboundLink('https://github.com/gaurang847', 'Github'); return false;"
-                href="https://github.com/gaurang847"></a>
-            <a class="fab fa-linkedin" aria-label="LinkedIn"
-                onclick="getOutboundLink('https://www.linkedin.com/in/gaurangpansare/', 'LinkedIn'); return false;"
-                href="https://www.linkedin.com/in/gaurangpansare/"></a>
-            <a class="fab fa-stack-overflow" aria-label="Stack Overflow"
-                onclick="getOutboundLink('https://stackoverflow.com/users/5968979/gaurang847', 'StackOverflow'); return false;"
-                href="https://stackoverflow.com/users/5968979/gaurang847"></a>
-            <a class="fab fa-dev" aria-label="Dev.to"
-                onclick="getOutboundLink('https://dev.to/gaurang847', 'Dev.to'); return false;"
-                href="https://dev.to/gaurang847"></a>
-            <a class="fab fa-twitter" aria-label="Twitter"
-                onclick="getOutboundLink('https://twitter.com/gaurang847', 'Twitter'); return false;"
-                href="https://twitter.com/gaurang847"></a>
-            <a class="fab fa-hashnode" aria-label="Hashnode"
-                onclick="getOutboundLink('https://blog.gaurang.page', 'Hashnode'); return false;"
-                href="https://blog.gaurang.page"></a>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="container">
+    <!-- Top Navigation / Utility Bar -->
+    <header class="top-nav">
+      <div class="status-badge" aria-label="Current status: Open to opportunities">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Open to exciting opportunities</span>
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
+        <!-- Sun Icon (shown in dark mode) -->
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0 0 1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <!-- Moon Icon (shown in light mode) -->
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M12.3 2a10 10 0 0 0-.19 1.4 10 10 0 0 0 11.64 11.64A9.99 9.99 0 0 1 12 22a10 10 0 0 1-10-10A9.99 9.99 0 0 1 12.3 2z"/>
+        </svg>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero / Profile Section -->
+      <section class="hero-section">
+        <div class="avatar-wrapper">
+          <div class="avatar-glow" aria-hidden="true"></div>
+          <img
+            src="assets/img/avatar.jpg"
+            alt="Portrait of Gaurang Pansare"
+            class="avatar-img"
+            width="150"
+            height="150"
+            loading="eager"
+          >
         </div>
-        <div id="bio">
-            <p>I am a passionate backend developer with expertise in Node.js and JavaScript. I have experience in developing scalable and efficient back-end services, APIs, and microservices using Node.js. My work experience includes working with various companies, startups, and individuals in developing their backend architecture and solving complex issues.</p>
-            <p>My ability to learn and adapt to new technologies quickly positions me as an asset to any organization. I am passionate about creating software that solves complex problems and enhances the user experience. If you are seeking a highly skilled and motivated backend developer, I would welcome the opportunity to work with you.</p>
+
+        <h1 class="hero-title">
+          <span class="greeting">Hi, I'm</span>
+          Gaurang Pansare
+        </h1>
+
+        <p class="hero-role">
+          <span>Backend Software Engineer &bull; Java / Spring Boot &amp; Node.js</span>
+        </p>
+
+        <p class="hero-summary">
+          Specializing in scalable distributed systems, enterprise microservices, and high-throughput APIs across both <strong>Java / Spring Boot</strong> and <strong>Node.js</strong> ecosystems.
+        </p>
+      </section>
+
+      <!-- Featured Blog Card ("Still Debugging" at blog.gaurang.page) -->
+      <aside aria-label="Featured Technical Blog - Still Debugging">
+        <a
+          href="https://blog.gaurang.page"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="featured-card"
+          data-track="Featured Blog - Still Debugging"
+        >
+          <div class="featured-card-content">
+            <div class="featured-card-icon" aria-hidden="true">
+              <!-- Hashnode / Blog Icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M22.351 8.019l-6.37-6.37a5.622 5.622 0 0 0-7.962 0l-6.37 6.37a5.622 5.622 0 0 0 0 7.962l6.37 6.37a5.622 5.622 0 0 0 7.962 0l6.37-6.37a5.622 5.622 0 0 0 0-7.962zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="featured-card-badge">Technical Blog &bull; Hashnode</span>
+              <h2 class="featured-card-title">
+                Still Debugging
+              </h2>
+              <span class="featured-card-domain">blog.gaurang.page</span>
+              <p class="featured-card-desc">
+                Practical lessons, architecture patterns, and hard-earned engineering insights across Java, Spring Boot, Node.js, and backend systems.
+              </p>
+            </div>
+          </div>
+          <div class="featured-card-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+      </aside>
+
+      <!-- Bio / About Section -->
+      <section class="section-block" aria-labelledby="bio-heading">
+        <div class="section-card">
+          <h2 id="bio-heading" class="section-heading">
+            <span class="section-heading-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+              </svg>
+            </span>
+            About Me
+          </h2>
+
+          <div class="bio-text">
+            <p>
+              I am a versatile <strong>backend software engineer</strong> with deep expertise across both <strong>Java (Spring Boot)</strong> and <strong>Node.js (JavaScript/TypeScript)</strong>. My current primary tech stack centers on architecting enterprise-grade microservices with Java and Spring Boot, backed by extensive experience with Node.js where I have more than double that tenure designing scalable, event-driven backend systems.
+            </p>
+            <p>
+              Working deeply across both the JVM and JavaScript runtimes enables me to leverage the right architectural patterns for each challenge—combining Java's robust enterprise multithreading and strong typing with Node.js's asynchronous I/O and lightweight microservices. Across both ecosystems, I specialize in scalable API design, database layer optimization (Hibernate/JPA, raw SQL, NoSQL), and concurrency tuning.
+            </p>
+            <p>
+              I document architectural patterns and engineering lessons on my blog, <strong>Still Debugging</strong>. Beyond building production backends, I actively solve algorithmic challenges on LeetCode and explore distributed systems design.
+            </p>
+          </div>
+
+          <!-- Skills Badges -->
+          <ul class="skills-list" aria-label="Core competencies & tech stack">
+            <li class="skill-pill skill-pill-highlight">Java</li>
+            <li class="skill-pill skill-pill-highlight">Spring Boot</li>
+            <li class="skill-pill skill-pill-highlight">Node.js</li>
+            <li class="skill-pill skill-pill-highlight">JavaScript / TypeScript</li>
+            <li class="skill-pill">Spring Cloud</li>
+            <li class="skill-pill">Microservices</li>
+            <li class="skill-pill">RESTful APIs</li>
+            <li class="skill-pill">Hibernate / JPA</li>
+            <li class="skill-pill">Distributed Systems</li>
+            <li class="skill-pill">System Design</li>
+            <li class="skill-pill">PostgreSQL / SQL</li>
+            <li class="skill-pill">MongoDB / NoSQL</li>
+            <li class="skill-pill">Redis</li>
+            <li class="skill-pill">Docker</li>
+            <li class="skill-pill">Performance Optimization</li>
+          </ul>
         </div>
-    </div>
+      </section>
+
+      <!-- Profiles & Links Section -->
+      <section class="section-block" aria-labelledby="links-heading">
+        <h2 id="links-heading" class="section-heading">
+          <span class="section-heading-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+            </svg>
+          </span>
+          Connect &amp; Developer Profiles
+        </h2>
+
+        <div class="links-grid">
+          <!-- 1. LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/gaurangpansare/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card"
+            data-track="LinkedIn"
+          >
+            <div class="link-card-left">
+              <div class="link-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <div class="link-card-info">
+                <span class="link-card-name">LinkedIn</span>
+                <span class="link-card-detail">in/gaurangpansare</span>
+              </div>
+            </div>
+            <div class="link-card-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 2. GitHub -->
+          <a
+            href="https://github.com/gaurang847"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card"
+            data-track="GitHub"
+          >
+            <div class="link-card-left">
+              <div class="link-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="link-card-info">
+                <span class="link-card-name">GitHub</span>
+                <span class="link-card-detail">github.com/gaurang847</span>
+              </div>
+            </div>
+            <div class="link-card-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 3. LeetCode -->
+          <a
+            href="https://leetcode.com/u/gaurang847"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card"
+            data-track="LeetCode"
+          >
+            <div class="link-card-left">
+              <div class="link-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.607L9.82 8.79l5.05-5.385a1.378 1.378 0 0 0-.962-2.405h-.425zm4.846 11.233H9.865a1.378 1.378 0 0 0 0 2.756h8.464a1.378 1.378 0 0 0 0-2.756z"/>
+                </svg>
+              </div>
+              <div class="link-card-info">
+                <span class="link-card-name">LeetCode</span>
+                <span class="link-card-detail">leetcode.com/gaurang847</span>
+              </div>
+            </div>
+            <div class="link-card-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 4. Stack Overflow (Profile & Story) -->
+          <a
+            href="https://stackoverflow.com/users/5968979/gaurang847"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card"
+            data-track="Stack Overflow"
+          >
+            <div class="link-card-left">
+              <div class="link-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M18.986 21.865v-6.404h2.134V24H2.96v-8.539h2.135v6.404h13.891zM6.974 18.065h9.79v-2.135H6.974v2.135zm.38-4.99l9.37 2.055.45-2.087-9.37-2.054-.45 2.086zm1.758-5.04l8.473 5.093 1.09-1.848-8.473-5.094-1.09 1.849zm3.568-4.922l6.83 7.15 1.554-1.48-6.83-7.15-1.554 1.48zm5.727-4.41l-1.91 1.01 4.79 9.07 1.91-1.01-4.79-9.07z"/>
+                </svg>
+              </div>
+              <div class="link-card-info">
+                <span class="link-card-name">Stack Overflow</span>
+                <span class="link-card-detail">Profile &amp; Story</span>
+              </div>
+            </div>
+            <div class="link-card-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 5. Still Debugging (Hashnode Blog) -->
+          <a
+            href="https://blog.gaurang.page"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card"
+            data-track="Still Debugging Blog"
+          >
+            <div class="link-card-left">
+              <div class="link-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22.351 8.019l-6.37-6.37a5.622 5.622 0 0 0-7.962 0l-6.37 6.37a5.622 5.622 0 0 0 0 7.962l6.37 6.37a5.622 5.622 0 0 0 7.962 0l6.37-6.37a5.622 5.622 0 0 0 0-7.962zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/>
+                </svg>
+              </div>
+              <div class="link-card-info">
+                <span class="link-card-name">Still Debugging</span>
+                <span class="link-card-detail">blog.gaurang.page</span>
+              </div>
+            </div>
+            <div class="link-card-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 6. Dev.to -->
+          <a
+            href="https://dev.to/gaurang847"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card"
+            data-track="Dev.to"
+          >
+            <div class="link-card-left">
+              <div class="link-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H5.34v4.36h1.24c.38 0 .66-.07.84-.23.18-.16.27-.42.27-.78v-2.34c0-.36-.09-.62-.27-.78zm13.1-6.05H3.48C1.56 4 0 5.56 0 7.48v9.04C0 18.44 1.56 20 3.48 20h17.04c1.92 0 3.48-1.56 3.48-3.48V7.48C24 5.56 22.44 4 20.52 4zm-12.7 10.4c-.4.4-.98.6-1.74.6H3.6V9h2.48c.76 0 1.34.2 1.74.6.4.4.6 1.02.6 1.86v1.14c0 .84-.2 1.46-.6 1.8zm5.82-.12h-2.22V9.01h2.22c.76 0 1.28.16 1.56.48.28.32.42.8.42 1.44v.26c0 .54-.11.96-.33 1.26-.22.3-.58.5-1.07.6l1.58 2.23h-1.39l-1.3-1.92h-.47v1.92zm6.26-3.26l-1.42 4.98h-1.48l-1.84-6.98h1.46l1.12 4.7 1.12-4.7h1.04z"/>
+                </svg>
+              </div>
+              <div class="link-card-info">
+                <span class="link-card-name">Dev.to</span>
+                <span class="link-card-detail">dev.to/gaurang847</span>
+              </div>
+            </div>
+            <div class="link-card-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 7. Email with 1-click Copy Action -->
+          <div class="link-card link-card-email">
+            <a
+              href="mailto:contact@gaurang.page"
+              class="link-card-left"
+              data-track="Email Mailto"
+              title="Send email to contact@gaurang.page"
+            >
+              <div class="link-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </div>
+              <div class="link-card-info">
+                <span class="link-card-name">Email</span>
+                <span class="link-card-detail">contact@gaurang.page</span>
+              </div>
+            </a>
+            <button
+              id="copy-email-btn"
+              class="link-copy-btn"
+              aria-label="Copy email address to clipboard"
+              title="Copy contact@gaurang.page"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+              </svg>
+              <span>Copy</span>
+            </button>
+          </div>
+
+          <!-- 8. Twitter / X (Last Link) -->
+          <a
+            href="https://twitter.com/gaurang847"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card"
+            data-track="Twitter"
+          >
+            <div class="link-card-left">
+              <div class="link-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </div>
+              <div class="link-card-info">
+                <span class="link-card-name">X (Twitter)</span>
+                <span class="link-card-detail">@gaurang847</span>
+              </div>
+            </div>
+            <div class="link-card-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (Immediately following last link) -->
+    <footer class="site-footer">
+      <p>
+        &copy; <span id="current-year">2026</span> Gaurang Pansare. Designed with clean minimalism.
+      </p>
+      <p>
+        Hosted on <span class="footer-domain-badge">www.gaurang.page</span> &bull; <span class="footer-domain-badge">gaurang.page</span>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast-container" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24">
+      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+    </svg>
+    <span class="toast-message">Email copied: contact@gaurang.page</span>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
