@@ -158,6 +158,8 @@ body::before {
   max-width: 740px;
   margin: 0 auto;
   padding: 40px 24px 40px 24px;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
   position: relative;
   z-index: 1;
 }
@@ -165,6 +167,8 @@ body::before {
 @media (max-width: 640px) {
   .container {
     padding: 20px 16px 28px 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
   }
 }
 
@@ -274,6 +278,14 @@ body::before {
   align-items: center;
   text-align: center;
   margin-bottom: 36px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 @media (max-width: 640px) {
@@ -897,6 +909,223 @@ body::before {
   width: 16px;
   height: 16px;
   fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Landscape & Short Screen Optimization
+   Targets phones in landscape (viewport height <= 560px)
+   -------------------------------------------------------------------------- */
+@media (max-height: 560px), (orientation: landscape) and (max-height: 650px) {
+  body::before {
+    height: 300px;
+    top: -100px;
+  }
+
+  .container {
+    padding-top: 14px;
+    padding-bottom: 24px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  /* Compact top bar */
+  .top-nav {
+    margin-bottom: 14px;
+  }
+  .status-badge {
+    padding: 4px 10px;
+    font-size: 0.76rem;
+    gap: 6px;
+  }
+  .status-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .theme-toggle-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .theme-toggle-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Horizontal Hero in Landscape */
+  .hero-section {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .avatar-wrapper {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .avatar-img {
+    width: 86px !important;
+    height: 86px !important;
+    border-width: 2px;
+  }
+
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+    margin-bottom: 2px;
+    line-height: 1.15;
+  }
+
+  .hero-title .greeting {
+    display: inline;
+    margin-right: 4px;
+    font-size: 0.8em;
+  }
+
+  .hero-role {
+    font-size: 0.86rem;
+    margin-bottom: 4px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .hero-summary {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  /* Compact Featured Blog Card */
+  .featured-card {
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+  .featured-card-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .featured-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .featured-card-badge {
+    font-size: 0.68rem;
+    margin-bottom: 2px;
+  }
+  .featured-card-title {
+    font-size: 0.98rem;
+    margin-bottom: 1px;
+  }
+  .featured-card-domain {
+    font-size: 0.74rem;
+    margin-bottom: 3px;
+  }
+  .featured-card-desc {
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  /* Compact Section Blocks & Cards */
+  .section-block {
+    margin-bottom: 16px;
+  }
+  .section-card {
+    padding: 14px 18px;
+  }
+  .section-heading {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .section-heading-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .bio-text {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+  .bio-text p + p {
+    margin-top: 8px;
+  }
+
+  .skills-list {
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .skill-pill {
+    padding: 3px 9px;
+    font-size: 0.75rem;
+  }
+
+  /* Compact Links Grid */
+  .links-grid {
+    gap: 8px;
+  }
+  .link-card {
+    padding: 9px 12px;
+  }
+  .link-card-left {
+    gap: 10px;
+  }
+  .link-card-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .link-card-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  .link-card-name {
+    font-size: 0.84rem;
+  }
+  .link-card-detail {
+    font-size: 0.72rem;
+  }
+  .link-copy-btn {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  /* Compact Support Card */
+  .support-card {
+    padding: 10px 14px;
+    margin-top: 10px;
+    gap: 8px;
+  }
+  .support-card-text {
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+  .support-btn {
+    padding: 4px 10px;
+    font-size: 0.74rem;
+  }
+  .support-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Compact Footer */
+  .site-footer {
+    padding-top: 12px;
+    margin-top: 4px;
+    font-size: 0.76rem;
+  }
+
+  .toast-container {
+    bottom: 12px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
 }
 
 /* --------------------------------------------------------------------------
