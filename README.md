@@ -1,11 +1,5 @@
 # gaurang847.github.io
 
-[![Website](https://img.shields.io/badge/Website-gaurang.page-0d9488?style=flat-square&logo=googlechrome&logoColor=white)](https://www.gaurang.page)
-[![Blog](https://img.shields.io/badge/Blog-Still%20Debugging-f59e0b?style=flat-square&logo=rss&logoColor=white)](https://blog.gaurang.page)
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ea4aaa?style=flat-square&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/gaurang847)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-ffdd00?style=flat-square&logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/gaurang847)
-[![Built with Antigravity](https://img.shields.io/badge/Built%20with-Google%20Antigravity-4285f4?style=flat-square&logo=google&logoColor=white)](https://antigravity.google)
-
 Personal website of **Gaurang Pansare** — Backend Software Engineer (Java &bull; Spring Boot &bull; Node.js).
 
 - **Production Domains:** [www.gaurang.page](https://www.gaurang.page) & [gaurang.page](https://gaurang.page)
