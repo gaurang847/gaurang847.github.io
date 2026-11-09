@@ -701,11 +701,13 @@ body::before {
   color: var(--text-muted);
   margin-left: 8px;
   flex-shrink: 0;
-  transition: transform var(--transition-fast), color var(--transition-fast);
+  opacity: 0.35;
+  transition: transform var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast);
 }
 
 .link-card:hover .link-card-arrow {
   color: var(--accent-primary);
+  opacity: 1;
   transform: translate(2px, -2px);
 }
 
@@ -880,51 +882,63 @@ body::before {
 }
 
 /* --------------------------------------------------------------------------
-   Mobile Landscape & Short Screen Optimization
-   Targets phones in landscape (viewport height <= 560px)
+   Content Grid (2-Column in Landscape/Desktop, Stacked in Portrait)
    -------------------------------------------------------------------------- */
-@media (max-height: 560px), (orientation: landscape) and (max-height: 650px) {
-  body::before {
-    height: 300px;
-    top: -100px;
-  }
+.content-grid {
+  display: flex;
+  flex-direction: column;
+}
 
+.grid-col-left,
+.grid-col-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* In portrait / narrow screen (< 640px), keep Featured Blog right above About Me */
+@media (max-width: 640px), (orientation: portrait) {
+  .content-grid {
+    display: contents;
+  }
+  .grid-col-left,
+  .grid-col-right {
+    display: contents;
+  }
+  .featured-aside {
+    order: 2;
+  }
+  .bio-section {
+    order: 3;
+  }
+  .links-section {
+    order: 4;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Landscape & Wide Screen Optimization (Effective Horizontal Space Usage)
+   Targets desktop/laptop screens (>= 992px) and landscape devices (>= 640px)
+   -------------------------------------------------------------------------- */
+@media (orientation: landscape) and (min-width: 640px), (min-width: 992px) {
   .container {
-    padding-top: 14px;
-    padding-bottom: 24px;
-    padding-left: max(16px, env(safe-area-inset-left));
-    padding-right: max(16px, env(safe-area-inset-right));
+    max-width: 1060px;
+    padding-top: 42px;
+    padding-bottom: 56px;
+    padding-left: max(32px, env(safe-area-inset-left));
+    padding-right: max(32px, env(safe-area-inset-right));
   }
 
-  /* Compact top bar */
-  .top-nav {
-    margin-bottom: 14px;
-  }
-  .status-badge {
-    padding: 4px 10px;
-    font-size: 0.76rem;
-    gap: 6px;
-  }
-  .status-dot {
-    width: 6px;
-    height: 6px;
-  }
-  .theme-toggle-btn {
-    width: 32px;
-    height: 32px;
-  }
-  .theme-toggle-btn svg {
-    width: 15px;
-    height: 15px;
+  main#main-content {
+    display: block !important;
   }
 
-  /* Horizontal Hero in Landscape */
+  /* Wide Horizontal Hero with Generous Spacing */
   .hero-section {
     flex-direction: row;
     align-items: center;
     text-align: left;
-    gap: 18px;
-    margin-bottom: 18px;
+    gap: 32px;
+    margin-bottom: 40px;
   }
 
   .avatar-wrapper {
@@ -933,9 +947,8 @@ body::before {
   }
 
   .avatar-img {
-    width: 86px !important;
-    height: 86px !important;
-    border-width: 2px;
+    width: 112px;
+    height: 112px;
   }
 
   .hero-content {
@@ -946,138 +959,342 @@ body::before {
   }
 
   .hero-title {
-    font-size: 1.35rem;
-    margin-bottom: 2px;
-    line-height: 1.15;
+    font-size: 1.85rem;
+    margin-bottom: 6px;
+    line-height: 1.2;
   }
 
   .hero-title .greeting {
     display: inline;
-    margin-right: 4px;
+    margin-right: 6px;
     font-size: 0.8em;
   }
 
   .hero-role {
-    font-size: 0.86rem;
-    margin-bottom: 4px;
+    font-size: 1.02rem;
+    margin-bottom: 12px;
     justify-content: flex-start;
     text-align: left;
   }
 
   .hero-summary {
-    font-size: 0.82rem;
-    line-height: 1.4;
+    font-size: 0.95rem;
+    line-height: 1.62;
     max-width: 100%;
     text-align: left;
   }
 
-  /* Compact Featured Blog Card */
-  .featured-card {
-    padding: 12px 16px;
-    margin-bottom: 16px;
-    gap: 12px;
-  }
-  .featured-card-icon {
-    width: 34px;
-    height: 34px;
-  }
-  .featured-card-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-  .featured-card-badge {
-    font-size: 0.68rem;
-    margin-bottom: 2px;
-  }
-  .featured-card-title {
-    font-size: 0.98rem;
-    margin-bottom: 1px;
-  }
-  .featured-card-domain {
-    font-size: 0.74rem;
-    margin-bottom: 3px;
-  }
-  .featured-card-desc {
-    font-size: 0.82rem;
-    line-height: 1.35;
+  /* 2-Column Content Grid: Generous 38px canal between columns */
+  .content-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr) !important;
+    gap: 38px !important;
+    align-items: start !important;
   }
 
-  /* Compact Section Blocks & Cards */
-  .section-block {
-    margin-bottom: 14px;
+  /* Left Column: About Me & Skills */
+  .grid-col-left {
+    display: flex !important;
+    flex-direction: column !important;
   }
-  .section-card {
-    padding: 12px 16px;
+
+  .bio-section {
+    margin-bottom: 0 !important;
   }
-  .section-heading {
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-    gap: 8px;
+
+  .bio-section .section-card {
+    padding: 28px 30px;
   }
-  .section-heading-icon svg {
-    width: 16px;
-    height: 16px;
-  }
+
   .bio-text {
-    font-size: 0.85rem;
-    line-height: 1.45;
+    font-size: 0.95rem;
+    line-height: 1.72;
   }
+
   .bio-text p + p {
-    margin-top: 6px;
+    margin-top: 16px;
   }
 
   .skills-list {
-    gap: 6px;
-    margin-top: 8px;
-  }
-  .skill-pill {
-    padding: 3px 9px;
-    font-size: 0.75rem;
+    gap: 9px 11px;
+    margin-top: 24px;
   }
 
-  /* Compact Links Grid: strictly 2 balanced columns in landscape */
+  .skill-pill {
+    padding: 6px 14px;
+    font-size: 0.83rem;
+  }
+
+  /* Right Column: Featured Blog & Connect Profiles */
+  .grid-col-right {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 26px !important;
+  }
+
+  .featured-aside {
+    margin-bottom: 0 !important;
+    order: unset !important;
+  }
+
+  .featured-card {
+    padding: 20px 24px;
+    gap: 18px;
+    margin-bottom: 0 !important;
+  }
+
+  .featured-card-desc {
+    line-height: 1.55;
+  }
+
+  .links-section {
+    margin-bottom: 0 !important;
+    order: unset !important;
+  }
+
+  .section-heading {
+    font-size: 1.08rem;
+    margin-bottom: 16px;
+    gap: 10px;
+  }
+
   .links-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px;
-    margin-bottom: 0;
+    gap: 14px;
   }
+
   .link-card {
-    padding: 8px 12px;
-    min-height: 44px;
+    padding: 13px 17px;
+    min-height: 52px;
   }
-  .link-card-left {
-    gap: 10px;
-    min-width: 0;
+
+  .support-card {
+    padding: 14px 20px;
+    margin-top: 18px;
+    gap: 14px;
   }
-  .link-card-icon {
-    width: 28px;
-    height: 28px;
+
+  .site-footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    font-size: 0.85rem;
   }
-  .link-card-icon svg {
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Landscape & Short Screen Specialization
+   Fine-tunes spacing when screen height is compact (<= 650px)
+   -------------------------------------------------------------------------- */
+@media (orientation: landscape) and (max-height: 650px), (max-height: 560px) {
+  body::before {
+    height: 260px;
+    top: -100px;
+  }
+
+  .container {
+    max-width: 980px;
+    padding-top: 12px;
+    padding-bottom: 18px;
+    padding-left: max(18px, env(safe-area-inset-left));
+    padding-right: max(18px, env(safe-area-inset-right));
+  }
+
+  /* Compact top bar */
+  .top-nav {
+    margin-bottom: 12px;
+  }
+  .status-badge {
+    padding: 3px 9px;
+    font-size: 0.74rem;
+    gap: 5px;
+  }
+  .status-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .theme-toggle-btn {
+    width: 30px;
+    height: 30px;
+  }
+  .theme-toggle-btn svg {
     width: 14px;
     height: 14px;
   }
+
+  /* Compact Horizontal Hero in Short Landscape */
+  .hero-section {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .avatar-img {
+    width: 72px !important;
+    height: 72px !important;
+    border-width: 2px;
+  }
+
+  .hero-title {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+    line-height: 1.15;
+  }
+
+  .hero-title .greeting {
+    font-size: 0.8em;
+  }
+
+  .hero-role {
+    font-size: 0.82rem;
+    margin-bottom: 4px;
+  }
+
+  .hero-summary {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  /* Breathable 2-Column Content Grid in Short Landscape */
+  .content-grid {
+    grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr) !important;
+    gap: 20px !important;
+  }
+
+  .grid-col-right {
+    gap: 14px !important;
+  }
+
+  /* Compact Bio Section */
+  .bio-section .section-card {
+    padding: 14px 16px;
+  }
+
+  .section-heading {
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+    gap: 7px;
+  }
+
+  .section-heading-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .bio-text {
+    font-size: 0.82rem;
+    line-height: 1.48;
+  }
+
+  .bio-text p + p {
+    margin-top: 8px;
+  }
+
+  .skills-list {
+    gap: 6px 8px;
+    margin-top: 10px;
+  }
+
+  .skill-pill {
+    padding: 3px 9px;
+    font-size: 0.74rem;
+  }
+
+  /* Compact Featured Blog Card */
+  .featured-aside {
+    margin-bottom: 0 !important;
+  }
+
+  .featured-card {
+    padding: 10px 14px;
+    gap: 12px;
+    margin-bottom: 0 !important;
+  }
+
+  .featured-card-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .featured-card-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .featured-card-badge {
+    font-size: 0.66rem;
+    margin-bottom: 1px;
+  }
+
+  .featured-card-title {
+    font-size: 0.92rem;
+    margin-bottom: 1px;
+  }
+
+  .featured-card-domain {
+    font-size: 0.72rem;
+    margin-bottom: 2px;
+  }
+
+  .featured-card-desc {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  /* Compact Links Grid */
+  .links-section {
+    margin-bottom: 0 !important;
+  }
+
+  .links-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px;
+    margin-bottom: 0 !important;
+  }
+
+  .link-card {
+    padding: 8px 11px;
+    min-height: 42px;
+  }
+
+  .link-card-left {
+    gap: 9px;
+    min-width: 0;
+  }
+
+  .link-card-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .link-card-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
   .link-card-info {
     min-width: 0;
   }
+
   .link-card-name {
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .link-card-detail {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .link-card-arrow {
-    margin-left: 6px;
+    margin-left: 4px;
   }
+
   .link-card-arrow svg {
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 12px;
   }
 
   /* Compact Support Card: single-line horizontal bar in landscape */
@@ -1087,31 +1304,36 @@ body::before {
     align-items: center !important;
     justify-content: space-between !important;
     flex-wrap: nowrap !important;
-    padding: 8px 14px;
-    margin-top: 8px;
+    padding: 8px 12px;
+    margin-top: 10px;
     gap: 8px;
   }
+
   .support-card-text {
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     gap: 6px;
     white-space: nowrap;
     min-width: 0;
   }
+
   .support-card-icon {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
+
   .support-card-actions {
     display: flex;
     align-items: center;
     gap: 6px;
     flex-shrink: 0;
   }
+
   .support-btn {
     padding: 4px 10px;
     font-size: 0.72rem;
     white-space: nowrap;
     gap: 5px;
   }
+
   .support-btn svg {
     width: 12px;
     height: 12px;
@@ -1119,10 +1341,10 @@ body::before {
 
   /* Compact Footer */
   .site-footer {
-    padding-top: 10px;
-    margin-top: 4px;
+    padding-top: 12px;
+    margin-top: 10px;
     font-size: 0.74rem;
-    line-height: 1.4;
+    line-height: 1.35;
   }
 
   .toast-container {
