@@ -4,7 +4,7 @@
 [![Blog](https://img.shields.io/badge/Blog-Still%20Debugging-f59e0b?style=flat-square&logo=rss&logoColor=white)](https://blog.gaurang.page)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ea4aaa?style=flat-square&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/gaurang847)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-ffdd00?style=flat-square&logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/gaurang847)
-[![Built with Antigravity](https://img.shields.io/badge/Built%20with-Google%20Antigravity-4285f4?style=flat-square&logo=google&logoColor=white)](https://deepmind.google/)
+[![Built with Antigravity](https://img.shields.io/badge/Built%20with-Google%20Antigravity-4285f4?style=flat-square&logo=google&logoColor=white)](https://antigravity.google)
 
 Personal website of **Gaurang Pansare** — Backend Software Engineer (Java &bull; Spring Boot &bull; Node.js).
 
@@ -30,6 +30,6 @@ If you find my open-source work or technical articles on [Still Debugging](https
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20My%20Work-ffdd00?style=for-the-badge&logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/gaurang847)
 
 ## Credits
-[![Built with Antigravity](https://img.shields.io/badge/Built%20with-Google%20Antigravity-4285f4?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/)
+[![Built with Antigravity](https://img.shields.io/badge/Built%20with-Google%20Antigravity-4285f4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google)
 
-Designed, developed, and refined in pair programming with **[Google Antigravity](https://deepmind.google/)**, an advanced agentic AI coding assistant developed by Google DeepMind.
+Designed, developed, and refined in pair programming with **[Google Antigravity](https://antigravity.google)**, an advanced agentic AI coding assistant developed by Google DeepMind.
