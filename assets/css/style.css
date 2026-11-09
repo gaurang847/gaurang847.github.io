@@ -7,35 +7,38 @@
    Design Tokens & CSS Variables
    -------------------------------------------------------------------------- */
 :root {
-  /* Color Palette - Dark Theme (Default) */
-  --bg-page: #0a0e17;
-  --bg-surface: #111827;
-  --bg-card: rgba(17, 24, 39, 0.7);
-  --bg-card-hover: rgba(30, 41, 59, 0.8);
-  --bg-badge: rgba(56, 189, 248, 0.12);
-  --bg-pill: rgba(255, 255, 255, 0.05);
-  --bg-pill-hover: rgba(255, 255, 255, 0.1);
+  /* Color Palette - Forest & Teal with Amber Accents (Dark Theme Default) */
+  --bg-page: #071512;
+  --bg-surface: #0e241f;
+  --bg-card: rgba(14, 36, 31, 0.72);
+  --bg-card-hover: rgba(20, 52, 44, 0.85);
+  --bg-badge: rgba(20, 184, 166, 0.12);
+  --bg-badge-amber: rgba(245, 158, 11, 0.14);
+  --bg-pill: rgba(255, 255, 255, 0.04);
+  --bg-pill-hover: rgba(20, 184, 166, 0.12);
 
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --text-accent: #38bdf8;
+  --text-primary: #f0fdf4;
+  --text-secondary: #9cb1aa;
+  --text-muted: #5e7971;
+  --text-accent: #2dd4bf;
+  --text-amber: #fbbf24;
 
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-card: rgba(255, 255, 255, 0.1);
-  --border-hover: rgba(56, 189, 248, 0.45);
+  --border-subtle: rgba(20, 184, 166, 0.1);
+  --border-card: rgba(20, 184, 166, 0.16);
+  --border-hover: rgba(45, 212, 191, 0.5);
 
-  --accent-primary: #38bdf8;
-  --accent-secondary: #818cf8;
-  --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-  --accent-glow: rgba(56, 189, 248, 0.15);
+  --accent-primary: #14b8a6;
+  --accent-secondary: #f59e0b;
+  --accent-gradient: linear-gradient(135deg, #14b8a6 0%, #f59e0b 100%);
+  --accent-glow: rgba(20, 184, 166, 0.18);
+  --accent-amber-glow: rgba(245, 158, 11, 0.22);
 
   --status-dot: #10b981;
-  --status-glow: rgba(16, 185, 129, 0.4);
+  --status-glow: rgba(16, 185, 129, 0.5);
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 12px 32px rgba(4, 30, 24, 0.5);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -52,34 +55,37 @@
 
 /* Light Theme Variables */
 [data-theme="light"] {
-  --bg-page: #f8fafc;
+  --bg-page: #f4f8f6;
   --bg-surface: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.88);
   --bg-card-hover: #ffffff;
-  --bg-badge: rgba(2, 132, 199, 0.1);
+  --bg-badge: rgba(13, 148, 136, 0.1);
+  --bg-badge-amber: rgba(217, 119, 6, 0.12);
   --bg-pill: rgba(0, 0, 0, 0.04);
-  --bg-pill-hover: rgba(0, 0, 0, 0.08);
+  --bg-pill-hover: rgba(13, 148, 136, 0.08);
 
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --text-accent: #0284c7;
+  --text-primary: #07231c;
+  --text-secondary: #36544c;
+  --text-muted: #5e7c74;
+  --text-accent: #0d9488;
+  --text-amber: #b45309;
 
-  --border-subtle: rgba(0, 0, 0, 0.06);
-  --border-card: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(2, 132, 199, 0.4);
+  --border-subtle: rgba(13, 148, 136, 0.09);
+  --border-card: rgba(13, 148, 136, 0.14);
+  --border-hover: rgba(13, 148, 136, 0.45);
 
-  --accent-primary: #0284c7;
-  --accent-secondary: #6366f1;
-  --accent-gradient: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
-  --accent-glow: rgba(2, 132, 199, 0.12);
+  --accent-primary: #0d9488;
+  --accent-secondary: #d97706;
+  --accent-gradient: linear-gradient(135deg, #0d9488 0%, #d97706 100%);
+  --accent-glow: rgba(13, 148, 136, 0.14);
+  --accent-amber-glow: rgba(217, 119, 6, 0.18);
 
   --status-dot: #059669;
-  --status-glow: rgba(5, 150, 105, 0.3);
+  --status-glow: rgba(5, 150, 105, 0.35);
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
-  --shadow-hover: 0 12px 32px rgba(15, 23, 42, 0.1);
+  --shadow-sm: 0 2px 8px rgba(7, 35, 28, 0.04);
+  --shadow-md: 0 8px 24px rgba(7, 35, 28, 0.07);
+  --shadow-hover: 0 12px 32px rgba(7, 35, 28, 0.12);
 }
 
 /* --------------------------------------------------------------------------
@@ -127,7 +133,7 @@ body::before {
 
 /* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--accent-primary);
+  outline: 2px solid var(--accent-secondary);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
@@ -364,7 +370,7 @@ body::before {
 }
 
 .scroll-indicator:hover {
-  color: var(--accent-primary);
+  color: var(--accent-secondary);
   transform: translateY(2px);
 }
 
@@ -446,8 +452,8 @@ body::before {
 }
 
 .hero-title .greeting {
-  font-weight: 400;
-  color: var(--text-secondary);
+  font-weight: 500;
+  color: var(--text-amber);
   font-size: 0.75em;
   display: block;
   margin-bottom: 2px;
@@ -564,8 +570,9 @@ body::before {
   font-size: 0.75rem;
   font-family: var(--font-mono);
   font-weight: 600;
-  color: var(--text-accent);
-  background: var(--bg-badge);
+  color: var(--text-amber);
+  background: var(--bg-badge-amber);
+  border: 1px solid rgba(245, 158, 11, 0.25);
   padding: 2px 8px;
   border-radius: var(--radius-sm);
 }
