@@ -125,24 +125,6 @@ body::before {
   opacity: 0.8;
 }
 
-/* Accessible Skip Link */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 20px;
-  background: var(--accent-primary);
-  color: #000;
-  padding: 8px 16px;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-  z-index: 1000;
-  transition: top var(--transition-fast);
-  text-decoration: none;
-}
-.skip-link:focus {
-  top: 20px;
-}
-
 /* Focus styles */
 :focus-visible {
   outline: 2px solid var(--accent-primary);
@@ -270,14 +252,39 @@ body::before {
 [data-theme="light"] .icon-moon { display: block; }
 
 /* --------------------------------------------------------------------------
-   Hero / Profile Section
+   Stage 1: Hero Viewport (Minimalist First Screen / Above the Fold)
    -------------------------------------------------------------------------- */
+.hero-stage {
+  min-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 24px;
+}
+
+@supports (min-height: 90svh) {
+  .hero-stage {
+    min-height: 90svh;
+  }
+}
+
+.hero-center-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+  padding: 16px 0;
+  width: 100%;
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 0;
+  width: 100%;
 }
 
 .hero-content {
@@ -288,10 +295,107 @@ body::before {
   width: 100%;
 }
 
-@media (max-width: 640px) {
-  .hero-section {
-    margin-bottom: 28px;
+/* Quick Action Pills in Hero */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  line-height: 1.4;
+}
+
+.hero-cta-primary {
+  background: var(--text-primary);
+  color: var(--bg-page);
+  border: 1px solid var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  opacity: 0.95;
+}
+
+.hero-cta-secondary {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-card);
+  backdrop-filter: blur(10px);
+}
+
+.hero-cta-secondary:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+/* Scroll to Explore Indicator */
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.scroll-indicator:hover {
+  color: var(--accent-primary);
+  transform: translateY(2px);
+}
+
+.scroll-indicator-icon {
+  animation: floatDown 2s infinite ease-in-out;
+}
+
+@keyframes floatDown {
+  0%, 100% {
+    transform: translateY(0);
   }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* Scroll Anchor for smooth landing offset */
+.scroll-anchor {
+  display: block;
+  position: relative;
+  top: -24px;
+  visibility: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Stage 2: Content Viewport (Unfolds Below the Fold)
+   -------------------------------------------------------------------------- */
+.content-stage {
+  padding-top: 40px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 16px;
 }
 
 .avatar-wrapper {
@@ -959,25 +1063,31 @@ body::before {
    Targets desktop/laptop screens (>= 992px) and landscape devices (>= 640px)
    -------------------------------------------------------------------------- */
 @media (orientation: landscape) and (min-width: 640px), (min-width: 992px) {
+  main#main-content {
+    display: block !important;
+  }
+
   .container {
     max-width: 1060px;
-    padding-top: 42px;
+    padding-top: 24px;
     padding-bottom: 56px;
     padding-left: max(32px, env(safe-area-inset-left));
     padding-right: max(32px, env(safe-area-inset-right));
   }
 
-  main#main-content {
-    display: block !important;
+  .hero-stage {
+    min-height: 88vh;
+    padding-bottom: 28px;
   }
 
-  /* Wide Horizontal Hero with Generous Spacing */
+  /* Wide Horizontal Hero centered in Viewport */
   .hero-section {
     flex-direction: row;
     align-items: center;
     text-align: left;
-    gap: 32px;
-    margin-bottom: 40px;
+    gap: 36px;
+    max-width: 880px;
+    margin: 0 auto;
   }
 
   .avatar-wrapper {
@@ -986,8 +1096,8 @@ body::before {
   }
 
   .avatar-img {
-    width: 112px;
-    height: 112px;
+    width: 120px;
+    height: 120px;
   }
 
   .hero-content {
@@ -998,7 +1108,7 @@ body::before {
   }
 
   .hero-title {
-    font-size: 1.85rem;
+    font-size: 2.1rem;
     margin-bottom: 6px;
     line-height: 1.2;
   }
@@ -1010,17 +1120,27 @@ body::before {
   }
 
   .hero-role {
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     margin-bottom: 12px;
     justify-content: flex-start;
     text-align: left;
   }
 
   .hero-summary {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     line-height: 1.62;
     max-width: 100%;
     text-align: left;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+    margin-top: 24px;
+  }
+
+  .content-stage {
+    padding-top: 48px;
+    margin-top: 24px;
   }
 
   /* 2-Column Content Grid: Generous 38px canal between columns */
@@ -1181,10 +1301,36 @@ body::before {
     height: 14px;
   }
 
+  .hero-stage {
+    min-height: calc(100vh - 20px);
+    padding-bottom: 10px;
+  }
+
   /* Compact Horizontal Hero in Short Landscape */
   .hero-section {
     gap: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+  }
+
+  .hero-actions {
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .hero-cta-btn {
+    padding: 4px 11px;
+    font-size: 0.72rem;
+  }
+
+  .scroll-indicator {
+    padding: 4px 10px;
+    font-size: 0.68rem;
+    gap: 2px;
+  }
+
+  .content-stage {
+    padding-top: 20px;
+    margin-top: 10px;
   }
 
   .avatar-img {
@@ -1439,6 +1585,9 @@ body::before {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .scroll-indicator-icon {
+    animation: none !important;
   }
 }
 

@@ -94,60 +94,90 @@
 </head>
 
 <body>
-  <!-- Accessibility Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <div class="container">
-    <!-- Top Navigation / Utility Bar -->
-    <header class="top-nav">
-      <div class="status-badge" aria-label="Current status: Open to opportunities">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>Open to exciting opportunities</span>
+    <!-- Stage 1: Minimalist First Viewport (Above the Fold) -->
+    <section class="hero-stage" aria-label="Introduction">
+      <header class="top-nav">
+        <div class="status-badge" aria-label="Current status: Open to opportunities">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Open to exciting opportunities</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0 0 1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12.3 2a10 10 0 0 0-.19 1.4 10 10 0 0 0 11.64 11.64A9.99 9.99 0 0 1 12 22a10 10 0 0 1-10-10A9.99 9.99 0 0 1 12.3 2z"/>
+          </svg>
+        </button>
+      </header>
+
+      <div class="hero-center-wrapper">
+        <div class="hero-section">
+          <div class="avatar-wrapper">
+            <div class="avatar-glow" aria-hidden="true"></div>
+            <img
+              src="assets/img/avatar.jpg"
+              alt="Portrait of Gaurang Pansare"
+              class="avatar-img"
+              width="150"
+              height="150"
+              loading="eager"
+            >
+          </div>
+
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="greeting">Hi, I'm</span>
+              Gaurang Pansare
+            </h1>
+
+            <p class="hero-role">
+              <span>Backend Software Engineer &bull; Java / Spring Boot &amp; Node.js</span>
+            </p>
+
+            <p class="hero-summary">
+              Specializing in scalable distributed systems, enterprise microservices, and high-throughput APIs across both <strong>Java / Spring Boot</strong> and <strong>Node.js</strong> ecosystems.
+            </p>
+
+            <!-- Quick Action Pills in Hero -->
+            <div class="hero-actions">
+              <a href="#about" class="hero-cta-btn hero-cta-primary">
+                <span>About &amp; Skills &darr;</span>
+              </a>
+              <a
+                href="https://blog.gaurang.page"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hero-cta-btn hero-cta-secondary"
+                data-track="Hero CTA - Blog"
+              >
+                <span>Still Debugging Blog &rarr;</span>
+              </a>
+              <a href="#connect" class="hero-cta-btn hero-cta-secondary">
+                <span>Get in Touch &darr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
-        <!-- Sun Icon (shown in dark mode) -->
-        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24">
-          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0 0 1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+      <!-- Scroll to Explore Indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to explore full portfolio">
+        <span class="scroll-indicator-text">Explore</span>
+        <svg class="scroll-indicator-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
         </svg>
-        <!-- Moon Icon (shown in light mode) -->
-        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24">
-          <path d="M12.3 2a10 10 0 0 0-.19 1.4 10 10 0 0 0 11.64 11.64A9.99 9.99 0 0 1 12 22a10 10 0 0 1-10-10A9.99 9.99 0 0 1 12.3 2z"/>
-        </svg>
-      </button>
-    </header>
+      </a>
+    </section>
 
-    <main id="main-content">
-      <!-- Hero / Profile Section -->
-      <section class="hero-section">
-        <div class="avatar-wrapper">
-          <div class="avatar-glow" aria-hidden="true"></div>
-          <img
-            src="assets/img/avatar.jpg"
-            alt="Portrait of Gaurang Pansare"
-            class="avatar-img"
-            width="150"
-            height="150"
-            loading="eager"
-          >
-        </div>
-
-        <div class="hero-content">
-          <h1 class="hero-title">
-            <span class="greeting">Hi, I'm</span>
-            Gaurang Pansare
-          </h1>
-
-          <p class="hero-role">
-            <span>Backend Software Engineer &bull; Java / Spring Boot &amp; Node.js</span>
-          </p>
-
-          <p class="hero-summary">
-            Specializing in scalable distributed systems, enterprise microservices, and high-throughput APIs across both <strong>Java / Spring Boot</strong> and <strong>Node.js</strong> ecosystems.
-          </p>
-        </div>
-      </section>
-
+    <!-- Stage 2: Deep Dive Content (Revealed on Scroll) -->
+    <main id="main-content" class="content-stage">
+      <div id="about" class="scroll-anchor" aria-hidden="true"></div>
       <!-- 2-Column Content Grid (Side-by-side in Landscape/Desktop, Natural flow in Portrait) -->
       <div class="content-grid">
         <!-- Left Column: About Me & Core Skills -->
@@ -229,7 +259,7 @@
           </aside>
 
           <!-- Profiles & Links Section -->
-          <section class="section-block links-section" aria-labelledby="links-heading">
+          <section id="connect" class="section-block links-section" aria-labelledby="links-heading">
             <h2 id="links-heading" class="section-heading">
               <span class="section-heading-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
