@@ -37,6 +37,16 @@
       const next = active === 'dark' ? 'light' : 'dark';
       applyTheme(next);
       localStorage.setItem(STORAGE_KEY, next);
+
+      if (typeof window.gtag === 'function') {
+        try {
+          window.gtag('event', 'theme_change', {
+            theme: next
+          });
+        } catch (err) {
+          // Silently ignore if blocked
+        }
+      }
     });
   }
 
@@ -112,8 +122,8 @@
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // --- Safe Outbound Analytics Tracking ---
-  // Sends an event via gtag or dataLayer if available without hijacking navigation
+  // --- Safe Analytics Click Tracking (GA4) ---
+  // Dispatches click events with descriptive labels to GA4 without hijacking navigation
   document.addEventListener('click', function (e) {
     const link = e.target.closest('a[data-track]');
     if (!link) return;
@@ -122,11 +132,17 @@
     const href = link.getAttribute('href');
 
     if (typeof window.gtag === 'function') {
-      window.gtag('event', 'click', {
-        event_category: 'outbound',
-        event_label: label,
-        transport_type: 'beacon'
-      });
+      try {
+        window.gtag('event', 'link_click', {
+          link_name: label,
+          link_url: href || '',
+          event_category: 'navigation',
+          event_label: label,
+          transport_type: 'beacon'
+        });
+      } catch (err) {
+        // Silently ignore if blocked by ad blockers or extensions
+      }
     }
   });
 })();
