@@ -6,11 +6,15 @@ Personal website of **Gaurang Pansare** — Backend Software Engineer (Java &bul
 - **Technical Blog:** [Still Debugging (blog.gaurang.page)](https://blog.gaurang.page)
 - **Contact:** [contact@gaurang.page](mailto:contact@gaurang.page)
 
-## Features
-- **Minimalist, Modern Design:** Pure semantic HTML5 and vanilla CSS (no heavy runtime dependencies).
-- **Dual Themes:** Sleek dark mode by default with light mode toggle, saved locally and honoring system preferences.
-- **Fast Performance:** Preconnected typography, vector SVG favicon, inline optimized brand icons, zero layout shift.
-- **Balanced Tech Stack:** Equal prominence to Java/Spring Boot (current stack) and Node.js (deep tenure), covering microservices, distributed architectures, and scalable APIs.
-- **Comprehensive Profiles & Support:** Clean 2x4 grid for core channels (LinkedIn, GitHub, LeetCode, Stack Overflow, Still Debugging blog, Dev.to, Email with 1-click copy, and X) paired with a subtle, dedicated support block for GitHub Sponsors and Buy Me a Coffee.
-- **Mobile-First Layout:** Compact margins, zero dead space, and seamless responsive design across all devices.
-- **Accessible & SEO-Optimized:** Semantic landmarks, Schema.org JSON-LD, Open Graph, Twitter Cards, and high-contrast styling.
+Built with pure native web standards (semantic HTML5, modern CSS3, and vanilla JavaScript) with zero build steps or runtime dependencies, deployed automatically via GitHub Actions.
+
+## Support & Sponsorship
+If you find my open-source work or technical articles on [Still Debugging](https://blog.gaurang.page) helpful, consider supporting my work:
+
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Support%20My%20Work-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/gaurang847)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20My%20Work-ffdd00?style=for-the-badge&logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/gaurang847)
+
+## Credits
+[![Built with Antigravity](https://img.shields.io/badge/Built%20with-Google%20Antigravity-4285f4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google)
+
+Designed, developed, and refined in pair programming with **[Google Antigravity](https://antigravity.google)**, an advanced agentic AI coding assistant developed by Google DeepMind.
