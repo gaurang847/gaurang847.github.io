@@ -6,16 +6,7 @@ Personal website of **Gaurang Pansare** — Backend Software Engineer (Java &bul
 - **Technical Blog:** [Still Debugging (blog.gaurang.page)](https://blog.gaurang.page)
 - **Contact:** [contact@gaurang.page](mailto:contact@gaurang.page)
 
-## Features
-- **Minimalist, Modern Design:** Pure semantic HTML5 and vanilla CSS (zero heavy frameworks or runtime dependencies).
-- **Two-Stage Scroll & Progressive Disclosure:** Minimalist, distraction-free hero landing that smoothly unfolds into full profiles and technical depth on scroll.
-- **Dual Themes:** Forest Green & Teal palette with warm Amber accents; dark mode by default with light mode toggle, persisted locally and honoring system preferences.
-- **Fast Performance:** Zero CDN/external font dependencies (system font stack), vector SVG favicon, inline optimized brand icons, zero layout shift.
-- **Balanced Tech Stack:** Clear spotlight on Java & Spring Boot (3+ years) and Node.js (5+ years), emphasizing distributed architecture, API craft, and production reliability.
-- **Comprehensive Profiles:** Clean grid for core channels (LinkedIn, GitHub, LeetCode, Stack Overflow Developer Story, Still Debugging blog, Dev.to, Email with 1-click copy, and X).
-- **Mobile-First & Responsive:** Compact margins, zero dead space, and seamless responsive design across desktop and mobile screens.
-- **Accessible & SEO-Optimized:** Semantic landmarks, Schema.org JSON-LD, Open Graph, Twitter Cards, and high-contrast accessible styling.
-- **Safe GA4 Analytics:** Fail-safe Google Analytics 4 tracking with beaconed navigation events that never block clicks or break under ad blockers.
+Built with pure native web standards (semantic HTML5, modern CSS3, and vanilla JavaScript) with zero build steps or runtime dependencies, deployed automatically via GitHub Actions.
 
 ## Support & Sponsorship
 If you find my open-source work or technical articles on [Still Debugging](https://blog.gaurang.page) helpful, consider supporting my work:
