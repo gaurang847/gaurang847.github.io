@@ -856,6 +856,15 @@ body::before {
   padding: 2px 7px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-domain-badge:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-pill-hover);
 }
 
 /* --------------------------------------------------------------------------
