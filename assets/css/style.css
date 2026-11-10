@@ -1115,6 +1115,10 @@ body::before {
   .links-section {
     order: 4;
   }
+  .site-footer {
+    order: 10;
+    margin-top: 24px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1122,25 +1126,23 @@ body::before {
    Targets desktop/laptop screens (>= 992px) and landscape devices (>= 640px)
    -------------------------------------------------------------------------- */
 @media (orientation: landscape) and (min-width: 640px), (min-width: 992px) {
-  main#main-content,
-  .content-stage {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    position: relative !important;
-  }
-
   .container {
     max-width: 1060px;
     padding-top: 24px;
-    padding-bottom: 56px;
+    padding-bottom: 24px;
     padding-left: max(32px, env(safe-area-inset-left));
     padding-right: max(32px, env(safe-area-inset-right));
   }
 
   .hero-stage {
-    min-height: 96vh;
+    min-height: calc(100vh - 24px);
     padding-bottom: 24px;
+  }
+
+  @supports (min-height: 100svh) {
+    .hero-stage {
+      min-height: calc(100svh - 24px);
+    }
   }
 
   /* Wide Horizontal Hero centered in Viewport */
@@ -1201,14 +1203,23 @@ body::before {
     margin-top: 24px;
   }
 
+  main#main-content,
   .content-stage {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 24px);
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
-    padding-top: 36px !important;
-    padding-bottom: 24px !important;
+    justify-content: space-between !important;
+    position: relative !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     margin-top: 0 !important;
+  }
+
+  @supports (min-height: 100svh) {
+    main#main-content,
+    .content-stage {
+      min-height: calc(100svh - 24px);
+    }
   }
 
   .content-stage .scroll-anchor {
@@ -1343,9 +1354,11 @@ body::before {
   }
 
   .site-footer {
-    margin-top: 24px;
-    padding-top: 20px;
+    margin-top: 0 !important;
+    padding-top: 14px !important;
+    padding-bottom: 4px !important;
     font-size: 0.85rem;
+    width: 100%;
   }
 }
 
@@ -1362,7 +1375,7 @@ body::before {
   .container {
     max-width: 980px;
     padding-top: 12px;
-    padding-bottom: 18px;
+    padding-bottom: 12px;
     padding-left: max(18px, env(safe-area-inset-left));
     padding-right: max(18px, env(safe-area-inset-right));
   }
@@ -1390,7 +1403,7 @@ body::before {
   }
 
   .hero-stage {
-    min-height: calc(100vh - 20px);
+    min-height: calc(100vh - 24px);
     padding-bottom: 10px;
   }
 
@@ -1416,13 +1429,16 @@ body::before {
     gap: 2px;
   }
 
+  main#main-content,
   .content-stage {
-    min-height: calc(100vh - 40px);
+    min-height: calc(100vh - 24px);
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
-    padding-top: 20px;
-    margin-top: 10px;
+    justify-content: space-between !important;
+    position: relative !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
 
   .avatar-img {
@@ -1664,10 +1680,12 @@ body::before {
 
   /* Compact Footer */
   .site-footer {
-    padding-top: 12px;
-    margin-top: 10px;
+    padding-top: 8px !important;
+    padding-bottom: 2px !important;
+    margin-top: 0 !important;
     font-size: 0.74rem;
     line-height: 1.35;
+    width: 100%;
   }
 
   .toast-container {
