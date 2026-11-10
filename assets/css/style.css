@@ -261,16 +261,16 @@ body::before {
    Stage 1: Hero Viewport (Minimalist First Screen / Above the Fold)
    -------------------------------------------------------------------------- */
 .hero-stage {
-  min-height: 86vh;
+  min-height: 94vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 24px;
 }
 
-@supports (min-height: 90svh) {
+@supports (min-height: 94svh) {
   .hero-stage {
-    min-height: 90svh;
+    min-height: 94svh;
   }
 }
 
@@ -399,7 +399,12 @@ body::before {
    Stage 2: Content Viewport (Unfolds Below the Fold)
    -------------------------------------------------------------------------- */
 .content-stage {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-top: 40px;
+  padding-bottom: 24px;
   border-top: 1px solid var(--border-subtle);
   margin-top: 16px;
 }
@@ -1130,8 +1135,8 @@ body::before {
   }
 
   .hero-stage {
-    min-height: 88vh;
-    padding-bottom: 28px;
+    min-height: 96vh;
+    padding-bottom: 24px;
   }
 
   /* Wide Horizontal Hero centered in Viewport */
@@ -1193,8 +1198,13 @@ body::before {
   }
 
   .content-stage {
-    padding-top: 48px;
-    margin-top: 24px;
+    min-height: calc(100vh - 60px);
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-top: 36px !important;
+    padding-bottom: 24px !important;
+    margin-top: 0 !important;
   }
 
   /* 2-Column Content Grid: Generous 38px canal between columns */
@@ -1322,8 +1332,8 @@ body::before {
   }
 
   .site-footer {
-    margin-top: 48px;
-    padding-top: 24px;
+    margin-top: 24px;
+    padding-top: 20px;
     font-size: 0.85rem;
   }
 }
@@ -1396,6 +1406,10 @@ body::before {
   }
 
   .content-stage {
+    min-height: calc(100vh - 40px);
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
     padding-top: 20px;
     margin-top: 10px;
   }
