@@ -1122,8 +1122,12 @@ body::before {
    Targets desktop/laptop screens (>= 992px) and landscape devices (>= 640px)
    -------------------------------------------------------------------------- */
 @media (orientation: landscape) and (min-width: 640px), (min-width: 992px) {
-  main#main-content {
-    display: block !important;
+  main#main-content,
+  .content-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    position: relative !important;
   }
 
   .container {
@@ -1207,12 +1211,19 @@ body::before {
     margin-top: 0 !important;
   }
 
-  /* 2-Column Content Grid: Generous 38px canal between columns */
+  .content-stage .scroll-anchor {
+    position: absolute !important;
+    top: 0 !important;
+  }
+
+  /* 2-Column Content Grid: Generous 38px canal between columns, vertically centered */
   .content-grid {
     display: grid !important;
     grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr) !important;
     gap: 38px !important;
     align-items: stretch !important;
+    margin: auto 0 !important;
+    width: 100% !important;
   }
 
   /* Left Column: About Me & Skills (Unboxed Editorial) */
@@ -1445,6 +1456,8 @@ body::before {
     grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr) !important;
     gap: 20px !important;
     align-items: stretch !important;
+    margin: auto 0 !important;
+    width: 100% !important;
   }
 
   .grid-col-right {
