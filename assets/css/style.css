@@ -1202,20 +1202,27 @@ body::before {
     display: grid !important;
     grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr) !important;
     gap: 38px !important;
-    align-items: start !important;
+    align-items: stretch !important;
   }
 
   /* Left Column: About Me & Skills (Unboxed Editorial) */
   .grid-col-left {
     display: flex !important;
     flex-direction: column !important;
+    height: 100% !important;
   }
 
   .bio-section {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
     margin-bottom: 0 !important;
   }
 
   .bio-section .section-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
     padding: 0 !important;
     background: transparent !important;
     border: none !important;
@@ -1253,15 +1260,15 @@ body::before {
 
   .bio-actions-grid {
     gap: 10px;
-    margin-top: 14px;
-    padding-top: 14px;
+    margin-top: auto !important;
+    padding-top: 18px !important;
   }
 
   /* Right Column: Featured Blog & Connect Profiles */
   .grid-col-right {
     display: flex !important;
     flex-direction: column !important;
-    gap: 26px !important;
+    gap: 18px !important;
   }
 
   .featured-aside {
@@ -1270,8 +1277,8 @@ body::before {
   }
 
   .featured-card {
-    padding: 18px 22px;
-    gap: 16px;
+    padding: 14px 18px;
+    gap: 14px;
     margin-bottom: 0 !important;
   }
 
@@ -1305,8 +1312,8 @@ body::before {
   }
 
   .support-card {
-    padding: 16px 4px 0 !important;
-    margin-top: 18px !important;
+    padding: 12px 4px 0 !important;
+    margin-top: 12px !important;
     gap: 12px;
     background: transparent !important;
     border: none !important;
@@ -1423,6 +1430,7 @@ body::before {
   .content-grid {
     grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr) !important;
     gap: 20px !important;
+    align-items: stretch !important;
   }
 
   .grid-col-right {
@@ -1478,7 +1486,7 @@ body::before {
 
   .bio-actions-grid {
     gap: 8px;
-    margin-top: 10px;
+    margin-top: auto !important;
     padding-top: 10px;
   }
 
