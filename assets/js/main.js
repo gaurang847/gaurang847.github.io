@@ -135,6 +135,7 @@
       try {
         window.gtag('event', 'link_click', {
           link_name: label,
+          link_text: label,
           link_url: href || '',
           event_category: 'navigation',
           event_label: label,
