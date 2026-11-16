@@ -123,7 +123,7 @@
   }
 
   // --- Safe Analytics Click Tracking (GA4) ---
-  // Dispatches click events with descriptive labels to GA4 without hijacking navigation
+  // Uses closest() to reliably capture clicks on inner SVGs, icons, and text spans
   document.addEventListener('click', function (e) {
     const link = e.target.closest('a[data-track]');
     if (!link) return;
